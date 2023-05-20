@@ -45,6 +45,7 @@ struct PopUp: View {
 
 struct DetailView: View {
     @Binding var showDetail: Bool
+    @GestureState private var dragOffSet = CGSize.zero
     
     let barBgGradient = Gradient(colors: [.pink.opacity(0.3), .red.opacity(0.6)])
     
@@ -86,6 +87,20 @@ struct DetailView: View {
             .cornerRadius(16)
             .padding(.horizontal)
             .foregroundColor(.black)
+            .offset(dragOffSet)
+            .gesture(
+                DragGesture(minimumDistance: 10)
+                    .updating($dragOffSet, body: { value, dragOffSet, _ in
+                        dragOffSet = value.translation
+                    })
+                    .onEnded{ value in
+                        let xOffSet = abs(value.translation.width)
+                        let yOffSet = abs(value.translation.height)
+                        if (xOffSet > 100 || yOffSet > 100 ) {
+                            showDetail.toggle()
+                        }
+                    }
+            )
         }
     }
 }
