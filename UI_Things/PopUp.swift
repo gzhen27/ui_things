@@ -96,7 +96,7 @@ struct DetailView: View {
                     .onEnded{ value in
                         let xOffSet = abs(value.translation.width)
                         let yOffSet = abs(value.translation.height)
-                        if (xOffSet > 100 || yOffSet > 100 ) {
+                        if (xOffSet > 150 || yOffSet > 150 ) {
                             showDetail.toggle()
                         }
                     }
