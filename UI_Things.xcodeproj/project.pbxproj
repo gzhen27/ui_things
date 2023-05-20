@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EBB8D7C52A192E6B008EA6B8 /* UI_ThingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8D7C42A192E6B008EA6B8 /* UI_ThingsApp.swift */; };
-		EBB8D7C72A192E6B008EA6B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8D7C62A192E6B008EA6B8 /* ContentView.swift */; };
+		EBB8D7C72A192E6B008EA6B8 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8D7C62A192E6B008EA6B8 /* PopUp.swift */; };
 		EBB8D7C92A192E6C008EA6B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB8D7C82A192E6C008EA6B8 /* Assets.xcassets */; };
 		EBB8D7CC2A192E6C008EA6B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB8D7CB2A192E6C008EA6B8 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		EBB8D7C12A192E6B008EA6B8 /* UI_Things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI_Things.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB8D7C42A192E6B008EA6B8 /* UI_ThingsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ThingsApp.swift; sourceTree = "<group>"; };
-		EBB8D7C62A192E6B008EA6B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EBB8D7C62A192E6B008EA6B8 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		EBB8D7C82A192E6C008EA6B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBB8D7CB2A192E6C008EA6B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				EBB8D7C42A192E6B008EA6B8 /* UI_ThingsApp.swift */,
-				EBB8D7C62A192E6B008EA6B8 /* ContentView.swift */,
+				EBB8D7C62A192E6B008EA6B8 /* PopUp.swift */,
 				EBB8D7C82A192E6C008EA6B8 /* Assets.xcassets */,
 				EBB8D7CA2A192E6C008EA6B8 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB8D7C72A192E6B008EA6B8 /* ContentView.swift in Sources */,
+				EBB8D7C72A192E6B008EA6B8 /* PopUp.swift in Sources */,
 				EBB8D7C52A192E6B008EA6B8 /* UI_ThingsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

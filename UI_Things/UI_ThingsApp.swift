@@ -11,7 +11,7 @@ import SwiftUI
 struct UI_ThingsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PopUp()
         }
     }
 }
