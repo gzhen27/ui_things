@@ -21,7 +21,7 @@ struct PopUp: View {
                         }) {
                             Image(systemName: "exclamationmark.circle")
                                 .padding()
-                                .foregroundColor(.pink)
+                                .foregroundColor(.purple.opacity(0.7))
                                 .font(.title)
                         }
                     }
@@ -29,25 +29,30 @@ struct PopUp: View {
                 }
                 VStack {
                     Spacer()
-                    Text("Truth")
+                    Text("The Truth")
                         .font(.title)
                         .bold()
                     Spacer()
                 }
             }
             .blur(radius: showDetail ? 1.2 : 0)
+            .opacity(showDetail ? 0 : 1)
+            .animation(.easeOut, value: showDetail)
             if showDetail {
                 DetailView(showDetail: $showDetail)
             }
         }
+        .animation(.linear, value: showDetail)
     }
 }
 
 struct DetailView: View {
-    @Binding var showDetail: Bool
-    @GestureState private var dragOffSet = CGSize.zero
+    @State private var dragOffSet = CGSize.zero
+    @State private var isViewOn = false
     
-    let barBgGradient = Gradient(colors: [.pink.opacity(0.3), .red.opacity(0.6)])
+    @Binding var showDetail: Bool
+    
+    let barBgGradient = Gradient(colors: [.blue.opacity(0.3), .purple.opacity(0.6)])
     
     var body: some View {
         
@@ -90,18 +95,24 @@ struct DetailView: View {
             .offset(dragOffSet)
             .gesture(
                 DragGesture(minimumDistance: 10)
-                    .updating($dragOffSet, body: { value, dragOffSet, _ in
+                    .onChanged({ value in
                         dragOffSet = value.translation
                     })
                     .onEnded{ value in
                         let xOffSet = abs(value.translation.width)
                         let yOffSet = abs(value.translation.height)
-                        if (xOffSet > 100 || yOffSet > 100 ) {
+                        if (xOffSet > 100 || yOffSet > 120 ) {
                             showDetail.toggle()
+                        } else {
+                            dragOffSet = CGSize.zero
                         }
                     }
             )
         }
+        .onAppear {
+            isViewOn.toggle()
+        }
+        .animation(.linear, value: showDetail)
     }
 }
 
